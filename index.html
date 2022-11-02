@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <!-- links para poder utilizar el codigo js para el boton de descargar meme -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"
+      integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"
+      integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <title>Generador de memes</title>
+  </head>
+  <body>
+    <header>
+      <h1>Generador de Memes</h1>
+      <button id="btn-img">
+        <i class="fa-regular fa-file-image"></i>
+        Imagen
+      </button>
+      <button id="btn-txt">
+        <i class="fa-solid fa-font"></i>
+        Texto
+      </button>
+      <button id="btn-mode">
+        <i class="fa-solid fa-lightbulb"></i>
+        Modo Oscuro
+      </button>
+    </header>
+    <main>
+      <!-- seccion del generador de meme - box-meme-->
+      <section class="box-meme">
+        <div class="container-box" id="container-box">
+          <div class="top-text"><p id="top-text">TOP TEXT</p></div>
+
+          <div class="box"></div>
+          <div class="bottom-text"><p id="bottom-text">BOTTOM TEXT</p></div>
+        </div>
+
+        <button id="download-meme">
+          <i class="fa-solid fa-download"></i> Descargar Meme
+        </button>
+      </section>
+      <!-- seccion de barra lateral - imagen-->
+      <aside class="style-box">
+        <!-- barra de estillos de la imagen-->
+        <div class="box-style-img">
+          <h4>IMAGEN</h4>
+          <div>
+            <label>URL <input id="url" type="url" name="url" /></label>
+          </div>
+          <!-- contenedor de color de fondo y caja de opciones de seleccion-->
+          <h5>Fondo</h5>
+          <div class="img-bkg">
+            <div class="container-img-bkg">
+              <input id="bkg-color" type="color" name="color" value="#ffffff" />
+              <span id="hexacolor">#0000</span>
+            </div>
+
+            <div>
+              <select class="bkg-select" name="opciones">
+                <option>Ninguna</option>
+                <option>Aclarar</option>
+                <option>Oscurecer</option>
+                <option>Diferencia</option>
+                <option>Luminosidad</option>
+                <option>Multiplicar</option>
+              </select>
+            </div>
+          </div>
+          <!-- barras para seleccion de filtros-->
+          <div class="slides">
+            <h5>Filtros</h5>
+            <label for="brightness">Brillo</label>
+            <input
+              id="brightness"
+              type="range"
+              name="range"
+              min="0"
+              max="1"
+              value="1"
+              step="0.1"
+            />
+
+            <label for="opacity">Opacidad</label>
+            <input
+              id="opacity"
+              type="range"
+              name="range"
+              min="0"
+              max=""
+              value="1"
+              step="0.1"
+            />
+
+            <label for="contrast">Contraste</label>
+            <input
+              id="contrast"
+              type="range"
+              name="range"
+              min="0"
+              max="5"
+              step="0"
+              value="0"
+            />
+
+            <label for="blur">Desenfoque</label>
+            <input
+              id="blur"
+              type="range"
+              name="range"
+              min="0"
+              max="5"
+              value="0"
+            />
+
+            <label for="grayscale">Escala de Grises</label>
+            <input
+              id="grayscale"
+              type="range"
+              name="range"
+              min="0"
+              max="5"
+              value="0"
+            />
+
+            <label for="sepia">Sepia</label>
+            <input
+              id="sepia"
+              type="range"
+              name="range"
+              min="0"
+              max="5"
+              value="0"
+            />
+
+            <label for="hue">HUE</label>
+            <input
+              id="hue"
+              type="range"
+              name="range"
+              min="0"
+              max="5"
+              value="0"
+            />
+
+            <label for="saturated">Saturado</label>
+            <input
+              id="saturated"
+              type="range"
+              name="range"
+              min="0"
+              max="5"
+              value="0"
+            />
+
+            <label for="negative">Negativo</label>
+            <input
+              id="negative"
+              type="range"
+              name="range"
+              min="0"
+              max="5"
+              value="0"
+            />
+          </div>
+          <button id="btn-reset">Reestrablecer Filtros</button>
+        </div>
+      </aside>
+      <!-- seccion de barra lateral - texto-->
+      <aside class="style-box-txt">
+        <div class="box-style-txt">
+          <h4>TEXTO</h4>
+          <!-- input de texto superior e inferior -->
+          <div>
+            <label
+              >Superior <input id="top" type="text" name="Top Text" value="Top Text"
+            /></label>
+          </div>
+          <div>
+            <label>
+              <input id="check" type="checkbox" />
+              Sin texto superior</label
+            >
+          </div>
+          <div>
+            <label
+              >Inferior <input id="bottom" type="text" name="Bottom Text" value="Bottom Text"
+            /></label>
+          </div>
+          <div>
+            <label>
+              <input id="check" type="checkbox" />
+              Sin texto Inferior</label
+            >
+          </div>
+          <!-- contenedor de tipos de fuente, tamaño y alineacion de texto-->
+          <div>
+            <h5>Fuentes</h5>
+            <div>
+              <select class="bkg-select" name="fuentes">
+                <option>Arial</option>
+                <option>Arial Black</option>
+                <option>American Typewriter</option>
+                <option>Andale Mono</option>
+                <option>Comic sans MS</option>
+                <option>Verdana</option>
+              </select>
+            </div>
+            <div>
+              <input id="size-font" type="number" min="10" max="50" />
+              <button><i class="fa-solid fa-align-right"></i></button>
+              <button><i class="fa-solid fa-align-center"></i></button>
+              <button><i class="fa-solid fa-align-left"></i></button>
+            </div>
+          </div>
+          <!-- contenedo color de fondo y de texto -->
+          <div class="txt-bkg">
+            <div>
+              <h5>Color</h5>
+              <div class="txt-FC">
+                <input
+                  id="bkg-color"
+                  type="color"
+                  name="color"
+                  value="#ffffff"
+                />
+                <span>#0000</span>
+              </div>
+            </div>
+
+            <div>
+              <h5>Fondo</h5>
+              <div class="txt-FC">
+                <input
+                  id="bkg-color"
+                  type="color"
+                  name="color"
+                  value="#ffffff"
+                />
+                <span>#0000</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <label><input id="yes" type="checkbox" /> Fondo transparente</label>
+          </div>
+          <!-- contorno -->
+          <div class="outline">
+            <h5>Contorno</h5>
+            <button>Ninguno</button>
+            <button>Claro</button>
+            <button>Oscuro</button>
+          </div>
+          <!-- Espaciado e interlineado -->
+          <label>
+            Espaciado
+            <input
+              id="line-spacing"
+              type="number"
+              min="10"
+              max="50"
+              value="10"
+            />
+          </label>
+          <label>
+            Interlineado
+            <input
+              id="line-spacing"
+              type="number"
+              min="10"
+              max="50"
+              value="10"
+            />
+          </label>
+        </div>
+      </aside>
+    </main>
+
+    <script src="main.js"></script>
+  </body>
+</html>

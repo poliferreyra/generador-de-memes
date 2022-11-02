@@ -1,0 +1,292 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: var(--color-font);
+  font-family: cochin;
+  font-size: 12px;
+}
+:root {
+  --primary-color: #30343f;
+  --secundary-color: #191e2b;
+  --hover-color: #62646b;
+  --color-font: rgb(228, 225, 225);
+}
+h4{
+  font-weight: bold;
+}
+body {
+  max-height: 100vh;
+  background-color: var(--primary-color);
+  position: relative;
+}
+#btn-img:hover{
+background-color: var(--hover-color);
+}
+#btn-txt:hover{
+  background-color: var(--hover-color);
+} 
+#btn-mode:hover{
+  background-color: var(--hover-color);
+}
+#url:hover{
+  background-color: var(--hover-color);
+}
+/*  header */
+header {
+  background-color: var(--secundary-color);
+  padding: 10px 0;
+  text-align: center;
+}
+header h1 {
+  padding-bottom: 7px;
+  font-size: 25px;
+}
+#btn-img, #btn-txt, #btn-mode {
+  padding: 3px 7px;
+  background-color: var(--secundary-color);
+  border: none;
+}
+header i{
+  color: white;
+}
+/* section - box - meme */
+.box-meme {
+  max-height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.container-box {
+  width: 400px;
+  height: 420px;
+  margin-top: 40px;
+}
+.top-text,
+.bottom-text
+{
+  width: 400px;
+  height: 70px;
+  font-weight: bold;
+  font-size: 18px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box {
+  width: 400px;
+  height: 280px;
+  background-color: black;
+  /* propiedades para que la imagen se acomode en el contenedor */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+}
+.container-box p {
+  color: black;
+  font-size: 30px;
+  font-weight: bold;
+}
+/* boton de la section box-meme */
+#download-meme {
+  width: 150px;
+  height: 30px;
+  margin-top: 15px;
+  background-color: #1b5e20;
+  color: white;
+  border: none;
+  font-weight: bold;
+}
+/*  aside - imagen y texto */
+.style-box {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: white;
+}
+.style-box-txt {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: white;
+}
+.box-style-img {
+  width: 200px;
+  height: 100%;
+  padding: 15px;
+  background-color: var(--secundary-color);
+}
+.box-style-img h4 {
+  margin-bottom: 10px;
+}
+/* estilos de las etiquetas de los input */
+.box-style-img label {
+  display: block;
+  font-size: 11px;
+  margin-bottom: 3px;
+  padding-top: 3px;
+
+}
+#url {
+  width: 100%;
+  height: 20px;
+  background-color: var(--primary-color);
+  border: none;
+  margin-bottom: 10px;
+}
+/* contenedor general de color de fondo y caja de opciones de seleccion */
+.img-bkg {
+  height: 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: black;
+}
+/* contenedor color de fondo y hexadecimal */
+.container-img-bkg {
+  display: flex;
+  justify-content: space-around;
+  background-color: var(--primary-color);
+  padding: 5px 3px;
+  margin: 4px;
+  width: 80px;
+  height: 25px;
+}
+/* stackoverflow-¿Webkit CSS para controlar el cuadro alrededor del color en una entrada [tipo = color]?*/
+/* modifica el rectacgulo que viene por defecto - pero no entiendo como funciona el webkit */
+input[type="color"] {
+  -webkit-appearance: none;
+  border: none;
+  background-color: transparent;
+  width: 15px;
+  height: 15px;
+}
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+input[type="color"]::-webkit-color-swatch {
+  border: none;
+  border-radius: 50%;
+}
+/*  estos eran mis estiladosinput color  */
+/*#bkg-color {
+  background-color: white;
+  width: 15px;
+  height: 15px;
+  color: white;
+  border-radius: 50%;
+  outline: none;
+  border-width: 0;
+}*/
+/* caja de opciones de seleccion */
+.bkg-select {
+  width: 80px;
+  height: 25px;
+  background-color: var(--primary-color);
+  border: none;
+  outline: none;
+}
+.slides h5 {
+  margin-top: 10px;
+}
+/* este bloque me lo paso Gaby para estilar los slides y las bolitas de las puntas */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background: rgb(219, 213, 213);
+  cursor: pointer;
+  /*box-shadow: 0 0 2px 0 #555;
+  transition: background .3s ease-in-out;*/
+}
+/* estilos de las barras de input */
+.slides input {
+  width: 100%;
+  height: 3px;
+  appearance: none;
+  border-radius: 15px;
+}
+
+/* boton de reestanlecer filtros */
+#btn-reset {
+  margin-top: 20px;
+  padding: 5px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  font-weight: bold;
+}
+
+/* barra lateral texto */
+.box-style-txt {
+  width: 200px;
+  height: 100%;
+  padding: 15px;
+  background-color: var(--secundary-color);
+}
+.box-style-txt h4 {
+  margin-bottom: 10px;
+}
+.box-style-txt label {
+  display: block;
+  font-size: 11px;
+  margin-bottom: 3px;
+  padding-top: 3px;
+}
+/* texto arriba y abajo de la caja del editor */
+#top,
+#bottom{
+  width: 100%;
+  height: 20px;
+  margin-bottom: 3px;
+  background-color: var(--primary-color);
+  border: none;
+}
+.bkg-select{
+  width: 100%;
+  margin-bottom: 3px;
+}
+#size-font{
+  width: 80px;
+  height: 25px;
+  border: none;
+  color: var(--color-font);
+  background-color: var(--primary-color);
+}
+.fa-align-right,
+.fa-align-center,
+.fa-align-left{
+  background-color: var(--primary-color);
+  width: 23px;
+  height: 15px;
+}
+.txt-bkg{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4px;
+}
+.txt-FC{
+  background-color: var(--primary-color);
+  width: 80px;
+  height: 25px;
+}
+.outline{
+  margin-top: 5px;
+}
+
+.outline button{
+  background-color: var(--primary-color);
+  border: none;
+  height: 25px;
+  width: 50px;
+}
+#line-spacing{
+  width: 100%;
+  height: 20px;
+  background-color: var(--primary-color);
+  border: none;
+}
