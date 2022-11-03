@@ -26,7 +26,7 @@
     <title>Generador de memes</title>
   </head>
   <body>
-    <header>
+    <header id="header" class="header">
       <h1>Generador de Memes</h1>
       <button id="btn-img">
         <i class="fa-regular fa-file-image"></i>
@@ -42,12 +42,12 @@
       </button>
     </header>
     <main>
-      <!-- seccion del generador de meme - box-meme-->
+      <!-- BOX MEME - PRINCIPAL-->
       <section class="box-meme">
         <div class="container-box" id="container-box">
           <div class="top-text"><p id="top-text">TOP TEXT</p></div>
 
-          <div class="box"></div>
+          <div class="box" ></div>
           <div class="bottom-text"><p id="bottom-text">BOTTOM TEXT</p></div>
         </div>
 
@@ -55,15 +55,15 @@
           <i class="fa-solid fa-download"></i> Descargar Meme
         </button>
       </section>
-      <!-- seccion de barra lateral - imagen-->
+      <!-- BARRA LATERAL IMAGEN -->
       <aside class="style-box">
-        <!-- barra de estillos de la imagen-->
+        <!-- ESTILOS DE LA IMAGEN -->
         <div class="box-style-img">
           <h4>IMAGEN</h4>
           <div>
             <label>URL <input id="url" type="url" name="url" /></label>
           </div>
-          <!-- contenedor de color de fondo y caja de opciones de seleccion-->
+          <!-- DIV COLOR DE FONDO Y OPCIONES DE SELECCION -->
           <h5>Fondo</h5>
           <div class="img-bkg">
             <div class="container-img-bkg">
@@ -82,7 +82,7 @@
               </select>
             </div>
           </div>
-          <!-- barras para seleccion de filtros-->
+          <!-- FILTROS -->
           <div class="slides">
             <h5>Filtros</h5>
             <label for="brightness">Brillo</label>
@@ -181,11 +181,11 @@
           <button id="btn-reset">Reestrablecer Filtros</button>
         </div>
       </aside>
-      <!-- seccion de barra lateral - texto-->
+      <!-- BARRA LATERAL TEXTO -->
       <aside class="style-box-txt">
         <div class="box-style-txt">
           <h4>TEXTO</h4>
-          <!-- input de texto superior e inferior -->
+          <!-- INPUT TEXTO SUPERIOR E INFERIOR -->
           <div>
             <label
               >Superior <input id="top" type="text" name="Top Text" value="Top Text"
@@ -208,7 +208,7 @@
               Sin texto Inferior</label
             >
           </div>
-          <!-- contenedor de tipos de fuente, tamaño y alineacion de texto-->
+          <!-- FUENTES, TAMAÑO Y ALINEACION -->
           <div>
             <h5>Fuentes</h5>
             <div>
@@ -228,7 +228,7 @@
               <button><i class="fa-solid fa-align-left"></i></button>
             </div>
           </div>
-          <!-- contenedo color de fondo y de texto -->
+          <!-- DIV COLOR DE FONDO Y DE TEXTO -->
           <div class="txt-bkg">
             <div>
               <h5>Color</h5>
@@ -259,14 +259,14 @@
           <div>
             <label><input id="yes" type="checkbox" /> Fondo transparente</label>
           </div>
-          <!-- contorno -->
+          <!-- CONTORNO -->
           <div class="outline">
             <h5>Contorno</h5>
             <button>Ninguno</button>
             <button>Claro</button>
             <button>Oscuro</button>
           </div>
-          <!-- Espaciado e interlineado -->
+          <!-- ESPACIADO E INTERLINEADO -->
           <label>
             Espaciado
             <input

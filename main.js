@@ -2,6 +2,13 @@
 const $ = (selector) => document.querySelector(selector);
 
 // VARIABLES
+
+// light-mode
+let body = document.body
+let btnMode =$("#btn-mode");
+let header = $("#header");
+let main = $("#main")
+
 // boton de descarga meme
 let contenedorImagen = $("#container-box");
 let boton = $("#download-meme");
@@ -22,6 +29,11 @@ let brillo = $("#brightness");
 let opacidad = $("#opacity");
 
 // FUNCIONES
+
+// light-Mode
+const cambiarModoClaro= ()=>{
+  body.classList.toggle("light-mode") 
+};
 // boton de descarga meme
 const descargarMeme = () => {
   domtoimage.toBlob(contenedorImagen).then(function (blob) {
@@ -58,6 +70,9 @@ const cambiarTxtInf = (event) => {
 };
 
 // EVENTOS
+
+// light-mode
+btnMode.addEventListener("click", cambiarModoClaro);
 
 // boton de descarga meme
 boton.addEventListener("click", descargarMeme);
