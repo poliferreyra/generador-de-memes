@@ -8,15 +8,15 @@
 }
 /* COLORES POR DEFECTO */
 :root {
-  --primary-color: #465c8b;
-  --secundary-color: #063852;
+  --primary-color: #202124;
+  --secundary-color: #202537;
   --hover-color: #138d90;
-  --color-font: #fcfcfa;
+  --color-font: #e3cebf;
 }
 /* COLORES LIGHT MODE */
 :root {
-  --primary-light: #f7ef6a;
-  --secundary-light: #93c178;
+  --primary-light:  #fcdcff;
+  --secundary-light:#e1e1e1;
   --light-font: black;
   --light-hover: #138d90;
 }
@@ -112,24 +112,28 @@ header i {
 }
 .container-box {
   width: 400px;
-  height: 420px;
+  height: 400px;
+  background-color: var(--secundary-color);
+  background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  
 }
 .top-text,
 .bottom-text {
   width: 400px;
-  padding: 25px;
+  padding: 15px;
   font-weight: bold;
   font-size: 18px;
   background-color: white;
 }
 .box {
   width: 400px;
-  height: 250px;
+  height: 400px;
   background-color: var(--secundary-color);
-  /* propiedades para que la imagen se acomode en el contenedor */
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -155,13 +159,14 @@ header i {
   position: absolute;
   top: 0;
   right: 0;
+  z-index: 100;
   color: white;
 }
 .style-box-txt {
   height: 100vh;
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
   color: white;
 }
 .box-style-img {
