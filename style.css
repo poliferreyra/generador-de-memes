@@ -15,10 +15,10 @@
 }
 /* COLORES LIGHT MODE */
 :root {
-  --primary-light:  #fcdcff;
-  --secundary-light:#e1e1e1;
+  --primary-light: #eeeeee;
+  --secundary-light: #e1e1e1;
   --light-font: black;
-  --light-hover: #138d90;
+  --light-hover: #14dadd;
 }
 /* LIGHT MODE */
 .light-mode {
@@ -33,7 +33,6 @@
 .light-mode .box {
   background-color: var(--secundary-light);
 }
-
 .light-mode #btn-img,
 .light-mode #btn-txt,
 .light-mode #btn-mode,
@@ -49,17 +48,16 @@
 .light-mode .fa-align-left,
 .light-mode .txt-FC,
 .light-mode .outline button,
-.light-mode #line-spacing {
+.light-mode #letter-spacing,
+.light-mode #line-height {
   background-color: var(--primary-light);
 }
-
 .light-mode #btn-img:hover,
 .light-mode #btn-txt:hover,
 .light-mode #btn-mode:hover,
 .light-mode #url:hover {
   background-color: var(--light-hover);
 }
-
 /* ****************************************************************************** */
 h4 {
   font-weight: bold;
@@ -115,24 +113,33 @@ header i {
   height: 400px;
   background-color: var(--secundary-color);
   background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  
 }
-.top-text,
+.top-text {
+  width: 400px;
+  padding: 15px;
+  font-weight: bold;
+  font-size: 18px;
+  background-color: white;
+  position: absolute;
+  top: 0;
+}
 .bottom-text {
   width: 400px;
   padding: 15px;
   font-weight: bold;
   font-size: 18px;
   background-color: white;
+  position: absolute;
+  bottom: 0;
 }
 .box {
   width: 400px;
   height: 400px;
+  position: relative;
   background-color: var(--secundary-color);
   background-repeat: no-repeat;
   background-position: center;
@@ -159,7 +166,7 @@ header i {
   position: absolute;
   top: 0;
   right: 0;
-  z-index: 100;
+  z-index: 1;
   color: white;
 }
 .style-box-txt {
@@ -255,7 +262,6 @@ input[type="range"]::-webkit-slider-thumb {
   appearance: none;
   border-radius: 15px;
 }
-
 /* BOTON REESTABLECER */
 #btn-reset {
   margin-top: 20px;
@@ -265,7 +271,6 @@ input[type="range"]::-webkit-slider-thumb {
   border: none;
   font-weight: bold;
 }
-
 /* BARRA TEXTO */
 .box-style-txt {
   width: 200px;
@@ -325,14 +330,14 @@ input[type="range"]::-webkit-slider-thumb {
 .outline {
   margin-top: 5px;
 }
-
 .outline button {
   background-color: var(--primary-color);
   border: none;
   height: 25px;
   width: 50px;
 }
-#line-spacing {
+#letter-spacing,
+#line-height {
   width: 100%;
   height: 20px;
   background-color: var(--primary-color);
