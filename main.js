@@ -13,6 +13,9 @@ let asideImg = $(".style-box");
 let asideTxt = $(".style-box-txt");
 let btnImg = $("#btn-img");
 let btnTxt = $("#btn-txt");
+// xmark
+let xmarkImg = $("#close-img-box");
+let xmarkTxt = $("#close-txt-box");
 // boton de descarga meme
 let contenedorImagen = $("#container-box");
 let boton = $("#download-meme");
@@ -85,6 +88,13 @@ const mostrarBarraTxt = () => {
 const mostrarBarraImg = () => {
   asideTxt.style.display = "none";
   asideImg.style.display = "flex";
+};
+// xmark
+const cerrarBarraImg = ()=> {
+  asideImg.style.display = "none"
+};
+const cerrarBarraTxt = ()=> {
+  asideTxt.style.display = "none"
 };
 // boton de descarga meme
 const descargarMeme = () => {
@@ -229,6 +239,9 @@ btnMode.addEventListener("click", cambiarModoClaro);
 // display none - barra imagen y texto
 btnTxt.addEventListener("click", mostrarBarraTxt);
 btnImg.addEventListener("click", mostrarBarraImg);
+// xmark
+xmarkImg.addEventListener("click", cerrarBarraImg);
+xmarkTxt.addEventListener("click", cerrarBarraTxt);
 // boton de descarga meme
 boton.addEventListener("click", descargarMeme);
 // texto superior e inferior

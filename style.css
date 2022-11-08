@@ -161,6 +161,16 @@ header i {
   font-weight: bold;
 }
 /*  BARRA IMAGEN Y TEXTO */
+.close-img-box,
+.close-txt-box{
+  width: 15px;
+  height: 15px;
+  background-color: var(--hover-color);
+  border: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
 .style-box {
   height: 100vh;
   position: absolute;
@@ -180,6 +190,7 @@ header i {
   width: 200px;
   height: 100%;
   padding: 15px;
+  position: relative;
   background-color: var(--secundary-color);
 }
 .box-style-img h4 {
