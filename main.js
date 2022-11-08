@@ -257,10 +257,10 @@ alignCenter.addEventListener("click", alinearCentro);
 checkTxtSup.addEventListener("click", sinTextSup);
 checkTxtInf.addEventListener("click", sinTextInf);
 // cambiar color al texto y fondo
-colorTxt.addEventListener("change", actualizarColorTxt);
-colorTxt.addEventListener("change", cambiarHexaTxt);
-txtFondo.addEventListener("change", actualizarFondoTxt);
-txtFondo.addEventListener("change", cambiarHexaFondo);
+colorTxt.addEventListener("input", actualizarColorTxt);
+colorTxt.addEventListener("input", cambiarHexaTxt);
+txtFondo.addEventListener("input", actualizarFondoTxt);
+txtFondo.addEventListener("input", cambiarHexaFondo);
 // contorno texto
 lightOutline.addEventListener("click", agregaContonoClaro);
 darkOutline.addEventListener("click", agregaContonoOscuro);
