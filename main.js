@@ -90,11 +90,11 @@ const mostrarBarraImg = () => {
   asideImg.style.display = "flex";
 };
 // xmark
-const cerrarBarraImg = ()=> {
-  asideImg.style.display = "none"
+const cerrarBarraImg = () => {
+  asideImg.style.display = "none";
 };
-const cerrarBarraTxt = ()=> {
-  asideTxt.style.display = "none"
+const cerrarBarraTxt = () => {
+  asideTxt.style.display = "none";
 };
 // boton de descarga meme
 const descargarMeme = () => {
@@ -205,18 +205,20 @@ const agregaContonoOscuro = () => {
   txtInf.style.textShadow = contronoOscuro;
 };
 // espaciado e interlineado
-const agregarEspacioTxt =()=>{
-  txtSup.style.letterSpacing = `${espaciado.value}px`
-  txtInf.style.letterSpacing = `${espaciado.value}px`
+const agregarEspacioTxt = () => {
+  txtSup.style.letterSpacing = `${espaciado.value}px`;
+  txtInf.style.letterSpacing = `${espaciado.value}px`;
 };
-const agregarAlturaTxt =()=>{
-txtSup.style.lineHeight = interlineado.value
-txtInf.style.lineHeight = interlineado.value
+const agregarAlturaTxt = () => {
+  txtSup.style.lineHeight = interlineado.value;
+  txtInf.style.lineHeight = interlineado.value;
 };
 // filtros
 const actualizarFiltros = () => {
-  boxImage.style.filter = `brightness(${brillo.value}) opacity(${opacidad.value}) contrast(${contraste.value}) blur(${desenfoque.value}px) grayscale(${escalaGrises.value}) sepia(${sepia.value}) hue-rotate(${hue.value}deg) invert(${negativo.value})`;
-  //saturate(${saturacion.value})  tuve que sacar este filtro porque me rompia los demas...  al colocarlo y tocar alguno me pone en blanco y negro y no se reestablece
+  console.log(saturacion.value);
+  boxImage.style.filter = `brightness(${brillo.value}) opacity(${opacidad.value}) 
+  contrast(${contraste.value}) blur(${desenfoque.value}px) grayscale(${escalaGrises.value}) 
+  sepia(${sepia.value}) hue-rotate(${hue.value}deg) invert(${negativo.value}) saturate(${saturacion.value})`;
 };
 // reset
 const resetearFiltros = () => {
@@ -227,7 +229,7 @@ const resetearFiltros = () => {
   escalaGrises.value = 0;
   sepia.value = 0;
   hue.value = 0;
-  saturacion.value = 0;
+  saturacion.value = 1;
   negativo.value = 0;
   actualizarFiltros();
 };
