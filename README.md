@@ -28,3 +28,6 @@ Podrán editar y remover los textos superior e inferior.
 Cambiar el tipo de letra, el tamaño y la alineación del mismo. Además pueden modificar el color tanto de lo escrito como del fondo y les permite también dar un espaciado y un interlineado a gusto. Si lo desean tienen la opción de darle un fondo transparente.
 
 Terminada la edición podrán descargar el meme en su computadora.📥💻
+
+Probala 😉 
+https://poliferreyra.github.io/generador-de-memes/
